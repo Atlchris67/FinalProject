@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+
+<h3>Diabetes Prediction Form</h3> 
+
+<div> 
+<form action="/results" method="POST"> 
+	<label for="pregnancies">Pregnancies</label> 
+	<input type="text" id="pregnancies" name="pregnancies" required  min="0" max="10"> 
+    <br> 
+    <label for="glucose">Glucose:</label> 
+	<input type="text" id="glucose" name="glucose" required type="number" step="any"> 
+    <br> 
+    <label for="blood_pressure">Blood Pressure</label> 
+	<input type="text" id="blood_pressure" name="blood_pressure" required type="number" step="any"> 
+    <br> 
+    <label for="skin_thickness">Skin Thickness</label> 
+	<input type="text" id="skin_thickness" name="skin_thickness" required type="number" step="any"> 
+    <br> 
+    <label for="pregnancies">insulin</label> 
+	<input type="text" id="insulin" name="insulin" required type="number" step="any"> 
+    <br> 
+    <label for="bmi">BMI</label> 
+	<input type="text" id="bmi" name="bmi" required type="number" step="any"> 
+    <br> 
+    <label for="diabetes_pedigree_function">Diabetes Pedigree Function</label> 
+	<input type="text" id="diabetes_pedigree_function" name="diabetes_pedigree_function" required type="number" step="any"> 
+    <br> 
+    <label for="age">Age</label> 
+	<input type="text" id="age" name="age" required type="number" step="any"> 
+    <br> 
+    <input type="submit" value="Submit"> 
+</form> 
+</div> 
+
+
+
+{% endblock %}
