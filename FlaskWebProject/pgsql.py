@@ -39,7 +39,6 @@ def savePredictedResults(diabetes_results_df):
 
 # prediction function 
 def ValuePredictor(to_predict_list): 
-    # to_predict = np.array(to_predict_list).reshape(1, 12) 
-    # loaded_model = pickle.load(open("model.pkl", "rb")) 
+    #predictDiabetics(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age)
     result = [1]
     return result[0] 
