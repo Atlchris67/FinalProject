@@ -23,15 +23,15 @@ def getDataForModel() -> []:
     # Intialize error flag
     error_flag = False    
     # Intialize output dataframne
-    diabetics_df = pd.DataFrame
+    diabetes_df = pd.DataFrame
 
     try:
         # Fetch the data 
         # SMTODO - Change to call flask API to get data
-        diabetics_df = pd.read_csv('https://finalproject-jssicc.s3.us-east-2.amazonaws.com/diabetes.csv')
+        diabetes_df = pd.read_csv('https://finalproject-jssicc.s3.us-east-2.amazonaws.com/diabetes.csv')
         # Temporary code:
         # Rename coulumns 
-        diabetics_df = diabetics_df.rename(columns={'Pregnancies': 'pregnancies', 'Glucose': 'glucose', \
+        diabetes_df = diabetes_df.rename(columns={'Pregnancies': 'pregnancies', 'Glucose': 'glucose', \
                                                     'BloodPressure': 'blood_pressure', 'SkinThickness': 'skin_thickness', \
                                                     'Insulin': 'insulin', 'BMI': 'bmi', \
                                                     'DiabetesPedigreeFunction':'diabetes_pedigree_function', \
@@ -42,40 +42,40 @@ def getDataForModel() -> []:
 
 
     # Return error flag & data dataframne 
-    return error_flag, diabetics_df
+    return error_flag, diabetes_df
 
 
 ####################################################################################################################################################################
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-# Function: Clean inout diabetic data 
+# Function: Clean inout diabetes data 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 ####################################################################################################################################################################
-def cleanDiabeticData(diabetic_df) -> []:
+def cleanDiabetesData(diabetes_df) -> []:
 
     # Intialize error flag
     error_flag = False    
     # Intialize output dataframne & number of rows removed
-    clean_diabetics_df = pd.DataFrame
+    clean_diabetes_df = pd.DataFrame
     num_records_removed = 0
 
 
     try:
         # Copy input data to output dataframne
-        clean_diabetics_df = diabetic_df.copy()
+        clean_diabetes_df = diabetes_df.copy()
         # Number of records prior to cleanup
-        num_records_orig = clean_diabetics_df['outcome'].count()
+        num_records_orig = clean_diabetes_df['outcome'].count()
 
         # Remove any rows will all nulls
-        clean_diabetics_df = clean_diabetics_df.dropna()
+        clean_diabetes_df = clean_diabetes_df.dropna()
 
         # Remove rows with zero glucose 
-        clean_diabetics_df = clean_diabetics_df[(clean_diabetics_df['glucose'] != 0)]
+        clean_diabetes_df = clean_diabetes_df[(clean_diabetes_df['glucose'] != 0)]
 
         # Remove rows with zero blood pressure 
-        clean_diabetics_df = clean_diabetics_df[(clean_diabetics_df['blood_pressure'] != 0)]
+        clean_diabetes_df = clean_diabetes_df[(clean_diabetes_df['blood_pressure'] != 0)]
 
         # Remove rows with zero blood bmi
-        clean_diabetics_df = clean_diabetics_df[(clean_diabetics_df['bmi'] != 0)]
+        clean_diabetes_df = clean_diabetes_df[(clean_diabetes_df['bmi'] != 0)]
 
         #### Note:
         #### There are a number or records with zero value for Insulin & Skin thickness
@@ -84,7 +84,7 @@ def cleanDiabeticData(diabetic_df) -> []:
 
 
         # Number of records after cleanup
-        num_records_clean = clean_diabetics_df['outcome'].count()
+        num_records_clean = clean_diabetes_df['outcome'].count()
 
         # Number of records removed
         num_records_removed = num_records_orig - num_records_clean
@@ -96,7 +96,7 @@ def cleanDiabeticData(diabetic_df) -> []:
 
 
     # Return error flag & data dataframne 
-    return error_flag, num_records_removed, clean_diabetics_df
+    return error_flag, num_records_removed, clean_diabetes_df
 
     
 ####################################################################################################################################################################
@@ -113,19 +113,19 @@ def runLogisticRegression(X_train, X_test, y_train, y_test) -> bool:
 
     try:
         # Create a Logistic Regression Model
-        diabetics_model = LogisticRegression(solver='lbfgs', max_iter=200)
+        diabetes_model = LogisticRegression(solver='lbfgs', max_iter=200)
 
         # Fit the model on training data 
-        diabetics_model.fit(X_train, y_train)
+        diabetes_model.fit(X_train, y_train)
 
         # Save the model 
-        filename = "FlaskWebProject/models/LogisticRegression/DiabeticsLogisticRegressionModel.sav"
-        pickle.dump(diabetics_model, open(filename, 'wb'))
+        filename = "FlaskWebProject/models/LogisticRegression/DiabetesLogisticRegressionModel.sav"
+        pickle.dump(diabetes_model, open(filename, 'wb'))
 
         # Model score:
-        model_score_training = diabetics_model.score(X_train, y_train)
+        model_score_training = diabetes_model.score(X_train, y_train)
         print(("Model Score (Training data): {}").format(model_score_training))
-        model_score_test = diabetics_model.score(X_test, y_test)
+        model_score_test = diabetes_model.score(X_test, y_test)
         print(("Model Score (Test data): {}").format(model_score_test))
         compare_scores_df = pd.DataFrame({"Model": ["Logistic Regression"], "Model Score (Training Data)": [model_score_training], "Model Score (Test Data)": [model_score_test]})
         compare_scores_df.to_csv('FlaskWebProject/models/LogisticRegression/output/LogisticRegressionScores.csv', index=False)
@@ -134,7 +134,7 @@ def runLogisticRegression(X_train, X_test, y_train, y_test) -> bool:
         # Actual results
         actual_results = y_test
         # Predicted results 
-        predicted_results = diabetics_model.predict(X_test)
+        predicted_results = diabetes_model.predict(X_test)
         compare_results_df = pd.DataFrame({"Predicted Results": predicted_results, "Actual Results": actual_results})
         compare_results_df = pd.concat([X_test,compare_results_df], axis=1)
         compare_results_df.to_csv('FlaskWebProject/models/LogisticRegression/output/LogisticRegressionResults.csv', index=False)
@@ -166,19 +166,19 @@ def runGradientBoostingClassifier(X_train, X_test, y_train, y_test) -> bool:
 
     try:
         # Create a Gradient Boosting Classifier Model
-        diabetics_model = GradientBoostingClassifier()
+        diabetes_model = GradientBoostingClassifier()
 
         # Fit the model on training data 
-        diabetics_model.fit(X_train, y_train)
+        diabetes_model.fit(X_train, y_train)
 
         # Save the model 
-        filename = "FlaskWebProject/models/GradientBoostingClassifier/DiabeticsGradientBoostingClassifierModel.sav"
-        pickle.dump(diabetics_model, open(filename, 'wb'))
+        filename = "FlaskWebProject/models/GradientBoostingClassifier/DiabetesGradientBoostingClassifierModel.sav"
+        pickle.dump(diabetes_model, open(filename, 'wb'))
 
         # Model score:
-        model_score_training = diabetics_model.score(X_train, y_train)
+        model_score_training = diabetes_model.score(X_train, y_train)
         print(("Model Score (Training data): {}").format(model_score_training))
-        model_score_test = diabetics_model.score(X_test, y_test)
+        model_score_test = diabetes_model.score(X_test, y_test)
         print(("Model Score (Test data): {}").format(model_score_test))
         compare_scores_df = pd.DataFrame({"Model": ["Gradient Boosting Classifier"], "Model Score (Training Data)": [model_score_training], "Model Score (Test Data)": [model_score_test]})
         compare_scores_df.to_csv('FlaskWebProject/models/GradientBoostingClassifier/output/GradientBoostingClassifierScores.csv', index=False)
@@ -187,7 +187,7 @@ def runGradientBoostingClassifier(X_train, X_test, y_train, y_test) -> bool:
         # Actual results
         actual_results = y_test
         # Predicted results 
-        predicted_results = diabetics_model.predict(X_test)
+        predicted_results = diabetes_model.predict(X_test)
         compare_results_df = pd.DataFrame({"Predicted Results": predicted_results, "Actual Results": actual_results})
         compare_results_df = pd.concat([X_test,compare_results_df], axis=1)
         compare_results_df.to_csv('FlaskWebProject/models/GradientBoostingClassifier/output/GradientBoostingClassifierResults.csv', index=False)
@@ -219,19 +219,19 @@ def runKNeighborsClassifier(X_train, X_test, y_train, y_test) -> bool:
 
     try:
         # Create a K Neighbors Classifier Model
-        diabetics_model = KNeighborsClassifier()
+        diabetes_model = KNeighborsClassifier()
 
         # Fit the model on training data 
-        diabetics_model.fit(X_train, y_train)
+        diabetes_model.fit(X_train, y_train)
 
         # Save the model 
-        filename = "FlaskWebProject/models/KNeighborsClassifier/DiabeticsKNeighborsClassifierModel.sav"
-        pickle.dump(diabetics_model, open(filename, 'wb'))
+        filename = "FlaskWebProject/models/KNeighborsClassifier/DiabetesKNeighborsClassifierModel.sav"
+        pickle.dump(diabetes_model, open(filename, 'wb'))
 
         # Model score:
-        model_score_training = diabetics_model.score(X_train, y_train)
+        model_score_training = diabetes_model.score(X_train, y_train)
         print(("Model Score (Training data): {}").format(model_score_training))
-        model_score_test = diabetics_model.score(X_test, y_test)
+        model_score_test = diabetes_model.score(X_test, y_test)
         print(("Model Score (Test data): {}").format(model_score_test))
         compare_scores_df = pd.DataFrame({"Model": ["K Neighbors Classifier"], "Model Score (Training Data)": [model_score_training], "Model Score (Test Data)": [model_score_test]})
         compare_scores_df.to_csv('FlaskWebProject/models/KNeighborsClassifier/output/KNeighborsClassifierScores.csv', index=False)
@@ -240,7 +240,7 @@ def runKNeighborsClassifier(X_train, X_test, y_train, y_test) -> bool:
         # Actual results
         actual_results = y_test
         # Predicted results 
-        predicted_results = diabetics_model.predict(X_test)
+        predicted_results = diabetes_model.predict(X_test)
         compare_results_df = pd.DataFrame({"Predicted Results": predicted_results, "Actual Results": actual_results})
         compare_results_df = pd.concat([X_test,compare_results_df], axis=1)
         compare_results_df.to_csv('FlaskWebProject/models/KNeighborsClassifier/output/KNeighborsClassifierResults.csv', index=False)
@@ -272,19 +272,19 @@ def runDecisionTreeClassifier(X_train, X_test, y_train, y_test) -> bool:
 
     try:
         # Create a Decision Tree Classifier Model
-        diabetics_model = DecisionTreeClassifier()
+        diabetes_model = DecisionTreeClassifier()
 
         # Fit the model on training data 
-        diabetics_model.fit(X_train, y_train)
+        diabetes_model.fit(X_train, y_train)
 
         # Save the model 
-        filename = "FlaskWebProject/models/DecisionTreeClassifier/DiabeticsDecisionTreeClassifierModel.sav"
-        pickle.dump(diabetics_model, open(filename, 'wb'))
+        filename = "FlaskWebProject/models/DecisionTreeClassifier/DiabetesDecisionTreeClassifierModel.sav"
+        pickle.dump(diabetes_model, open(filename, 'wb'))
 
         # Model score:
-        model_score_training = diabetics_model.score(X_train, y_train)
+        model_score_training = diabetes_model.score(X_train, y_train)
         print(("Model Score (Training data): {}").format(model_score_training))
-        model_score_test = diabetics_model.score(X_test, y_test)
+        model_score_test = diabetes_model.score(X_test, y_test)
         print(("Model Score (Test data): {}").format(model_score_test))
         compare_scores_df = pd.DataFrame({"Model": ["Decision Tree Classifier"], "Model Score (Training Data)": [model_score_training], "Model Score (Test Data)": [model_score_test]})
         compare_scores_df.to_csv('FlaskWebProject/models/DecisionTreeClassifier/output/DecisionTreeClassifierScores.csv', index=False)
@@ -293,7 +293,7 @@ def runDecisionTreeClassifier(X_train, X_test, y_train, y_test) -> bool:
         # Actual results
         actual_results = y_test
         # Predicted results 
-        predicted_results = diabetics_model.predict(X_test)
+        predicted_results = diabetes_model.predict(X_test)
         compare_results_df = pd.DataFrame({"Predicted Results": predicted_results, "Actual Results": actual_results})
         compare_results_df = pd.concat([X_test,compare_results_df], axis=1)
         compare_results_df.to_csv('FlaskWebProject/models/DecisionTreeClassifier/output/DecisionTreeClassifierResults.csv', index=False)

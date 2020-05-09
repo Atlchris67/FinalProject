@@ -31,3 +31,11 @@ def getApiInfo():
     print(key)
     return key , baseurl
 
+
+def savePredictedResults(diabetes_results_df):
+    print("*** Saving the result predicted getapiinfo ***")
+    engine = db.engine
+    conn = engine.connect()
+    diabetes_results_df.to_sql(name = "diabetes_results", con = conn, if_exists = "append", index = False, schema = "public")
+    return 
+

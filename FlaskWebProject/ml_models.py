@@ -15,7 +15,7 @@ import pickle
 
 # Functions
 from ml_models_functions import getDataForModel
-from ml_models_functions import cleanDiabeticData
+from ml_models_functions import cleanDiabetesData
 from ml_models_functions import runLogisticRegression
 from ml_models_functions import runGradientBoostingClassifier
 from ml_models_functions import runKNeighborsClassifier
@@ -38,41 +38,41 @@ error_flag = False
 ### Fetch input data for model:
 print("*** Get data for analysis ***")
 # Intialize 
-diabetics_df = pd.DataFrame
+diabetes_df = pd.DataFrame
 # Call function
-diabetics_data = getDataForModel()
+diabetes_data = getDataForModel()
 # Output
-error_flag = diabetics_data[0]
-diabetics_df = diabetics_data[1]
+error_flag = diabetes_data[0]
+diabetes_df = diabetes_data[1]
 # Exit if error 
 if error_flag == True:
     exit()
 # Print for logging
-print(("Number of records retrieved: {}").format(diabetics_df['outcome'].count())) 
+print(("Number of records retrieved: {}").format(diabetes_df['outcome'].count())) 
 print("1st 5 rows are: ")
-print(diabetics_df.head())
+print(diabetes_df.head())
 
 
 
 ### Clean the input data 
 print("*** Perform data cleanup ***")
 # Intialize 
-clean_diabetics_df = pd.DataFrame
+clean_diabetes_df = pd.DataFrame
 num_rows_removed = 0
 # Call function
-clean_diabetics_data = cleanDiabeticData(diabetics_df)
+clean_diabetes_data = cleanDiabetesData(diabetes_df)
 # Output
-error_flag = clean_diabetics_data[0]
-num_rows_removed = clean_diabetics_data[1]
-clean_diabetics_df = clean_diabetics_data[2]
+error_flag = clean_diabetes_data[0]
+num_rows_removed = clean_diabetes_data[1]
+clean_diabetes_df = clean_diabetes_data[2]
 # Exit if error 
 if error_flag == True:
     exit()
 # Print for logging
 print(("Number of records removed: {}").format(num_rows_removed)) 
 print("1st 5 rows are: ")
-print(clean_diabetics_df.head())
-print(("Shape of input data: Number of rows: {}  x  Number of features: {}").format(clean_diabetics_df['outcome'].count(), len(clean_diabetics_df.columns)-1))
+print(clean_diabetes_df.head())
+print(("Shape of input data: Number of rows: {}  x  Number of features: {}").format(clean_diabetes_df['outcome'].count(), len(clean_diabetes_df.columns)-1))
 
 
 
@@ -82,8 +82,8 @@ print(("Shape of input data: Number of rows: {}  x  Number of features: {}").for
 # Establish X & y for Logistic Regression Model 
 print("*** Split training/test data ***")
 # X =  All data in dataframe except outcome 
-X = clean_diabetics_df.loc[:, clean_diabetics_df.columns != 'outcome']
-y = clean_diabetics_df['outcome']
+X = clean_diabetes_df.loc[:, clean_diabetes_df.columns != 'outcome']
+y = clean_diabetes_df['outcome']
 # Split data into train & test 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, stratify=y)
 # Print for logging

@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 ####################################################################################################################################################################
 
-from model_lr_predict import predictDiabetics
+from model_lr_predict import predictDiabetes
 
 ####################################################################################################################################################################
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
@@ -26,10 +26,13 @@ insulin = 54
 bmi = 37.7
 diabetes_pedigree_function = 0.362
 age = 29
-
+user_name = "Wonder Woman"
+user_country = "USA"
+user_state = "GA"
+gender = "Male"
 
 # Call function to predict answer
-predict = predictDiabetics(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age)
+predict = predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age, user_name, user_country, user_state, gender)
 # Output results
 error_flag = predict[0]
 result = predict[1]
@@ -39,9 +42,9 @@ if error_flag == True:
     exit()
 # Result
 if result == 0:
-    print("Prediction: Not Diabetic")
+    print("Prediction: Diabetes NO")
 else:
-    print("Prediction: Diabetic")
+    print("Prediction: Diabetes YES")
 
 
 ####################################################################################################################################################################

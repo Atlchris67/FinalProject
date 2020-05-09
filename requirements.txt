@@ -18,3 +18,4 @@ wincertstore==0.2
 requests==2.22.0
 sklearn=0.22.2
 pickle=11.1
+datetime=2.7
