@@ -17,5 +17,4 @@ Werkzeug==0.16.1
 wincertstore==0.2
 requests==2.22.0
 scikit-learn==0.22.2
-pickle==11.1
 datetime==2.7
