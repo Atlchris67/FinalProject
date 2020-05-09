@@ -18,7 +18,7 @@ from datetime import date
 # Main Function : Predict diabetes (Logistic Regression)
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 ####################################################################################################################################################################
-def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age, user_name, user_country, user_state, gender) -> []: 
+def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age, user_country, user_state, gender) -> []: 
 
     ### Initialize:
     # Intialize error = No
@@ -52,7 +52,7 @@ def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insuli
         
         # Curret date
         current_date = date.today()
-        other_input = {"create_date":[current_date], "user_name":[user_name], "user_country":[user_country], "user_state":[user_state], "gender":[gender]}
+        other_input = {"create_date":[current_date], "user_country":[user_country], "user_state":[user_state], "gender":[gender]}
         other_input_df = pd.DataFrame(other_input)
 
         # result

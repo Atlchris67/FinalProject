@@ -78,7 +78,7 @@ def results():
     if int(result)== 1: 
         prediction ='Run Martha your gonna get the sugar.'
     else: 
-        prediction ='Go ahead and have another donut marth, your all good.'            
+        prediction ='Go ahead and have another donut Martha, your all good.'            
     return render_template("results.html",
             title='Diabetes Prediction Form',
             year=datetime.now().year,
