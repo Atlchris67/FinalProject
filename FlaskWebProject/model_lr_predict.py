@@ -49,8 +49,6 @@ def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insuli
 
 
         # Save predicted result to Database
-        result = {"outcome":[predicted_result]}
-        result_df = pd.DataFrame(result)
         
         # Curret date
         current_date = date.today()
@@ -58,8 +56,9 @@ def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insuli
         other_input_df = pd.DataFrame(other_input)
 
         # result
+        result = {"outcome":[predicted_result]}
+        result_df = pd.DataFrame(result)
         
-
         # Concatenate the 3 dataframes to match table 
         diabetes_results_df = pd.concat([input_df, result_df, other_input_df], axis=1)
         print(diabetes_results_df.head())
