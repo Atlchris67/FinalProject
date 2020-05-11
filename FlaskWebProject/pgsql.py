@@ -40,7 +40,7 @@ def getDBData():
     data_df = pd.read_sql("SELECT * FROM diabetes_info", conn)
     json_data = data_df.to_json(orient='table')
     # save the table data as json file
-    data_df.to_json("FlaskWebProject/data/diabetes.json")
+    data_df.to_json("diabetes.json")
     return json_data
 
 def savePredictedResults(diabetes_results_df):
