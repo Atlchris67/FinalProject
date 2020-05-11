@@ -1,24 +1,21 @@
 
 /********************************************/
 function buildTable() {
-  
-
-  queryUrl="/table"
-  d3.json(queryUrl).then(data => {
+  queryUrl = "/table"
+  d3.json(queryUrl).then((diab_data) => {
     var table = d3.select("#summary-table");
     var tbody = table.select("tbody");
-
-    data.dataset.data.forEach(d => {
+    console.log(diab_data.data);
+    diab_data.data.forEach(d => {
       var row = tbody.append('tr')
       Object.values(d).forEach((element, index) => {
-        if (index <= 5) {
-          row.append('td').text(element)
+        if (index > 0 && index <= 9) {
+          row.append('td').text(element);
         }
       })
-    })
-  })
-
-}
+    });
+  });
+};
 
 /********************************************/
 function buildChart() {
