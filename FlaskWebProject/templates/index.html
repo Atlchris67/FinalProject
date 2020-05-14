@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="jumbotron" style = "color: #1C2833">
-      <h1>
+      <h1 style="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">
         Diabetes Machine Learning Predictor
       </h1>
       <p></p>
@@ -46,11 +46,15 @@
     </div> <!--end of row-->
 
     <!--tableau visuals-->
-    <div class="row">
-
+    <div class="row" onload="createViz(0);">
+        <div id="vizContainer" style="width:800px; height:700px;"></div>
+        <div id="controls" style="padding:20px;">
+            <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
+            <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
+        </div>
     </div>
 
-    <!-- need to fix/populate table using plots.js file -->
+    <!-- table with data; need to fix/populate table using plots.js file -->
     <div class="row">
       <div class="col-md-12">
         <table id="summary-table" class="table table-striped table-inverse">

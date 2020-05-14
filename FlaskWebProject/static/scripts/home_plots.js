@@ -1,8 +1,5 @@
 var vizList = ["https://public.tableau.com/views/Final_Project_15894299116730/Dashboard1?:display_count=y&:origin=viz_share_link",
-  "http://public.tableau.com/views/RegionalSampleWorkbook/Obesity",
-  "http://public.tableau.com/views/RegionalSampleWorkbook/College",
-  "http://public.tableau.com/views/RegionalSampleWorkbook/Stocks",
-  "http://public.tableau.com/views/RegionalSampleWorkbook/Storms"];
+  "https://public.tableau.com/views/Final_Project_15894299116730/Age?:display_count=y&:origin=viz_share_link"];
 
 var viz,
   vizLen = vizList.length,
