@@ -2,32 +2,70 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+<div class="container">
+    <div class="jumbotron">
+      <h1>
+        Diabetes Machine Learning Predictor
+      </h1>
+      <p></p>
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+            Company Profile
+          </div>
+        </div>
+        <div class="company">
+            <p>Our project is based on data from the National Institute of Diabetes and Digestive and Kidney Diseases regarding potential predicting 
+              factors of diabetes among females at least 21 years old of Pima Indian heritage. The size of the dataset is just over 700, and records 
+              factors such as number of pregnancies, glucose, blood pressure, skin thickness, insulin, BMI, Diabetes Pedigree Function, and age among
+              participants. 
+              <br>
+              <br>
+              The purpose of this project is to create a machine learning tool that will predict whether someone has diabetes or not, depending on the 
+              factors mentioned above. Our team tested out the accuracy of four different Machine Learning Classification Models (Decision Tree, Gradient 
+              Boosting, KNeighbor, and Logistic Regression), decided that the Logistic Regression model was the most accurate when looking at the F1-Score, 
+              precision, accuracy, and recall.</p>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Data Visualizations
+          </div>
+        </div>
+        <div id="plot"></div>
+        <!-- carousel with images of plots? How do we want to display data here? -->
+      </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+
+    <!-- need to fix/populate table using plots.js file -->
+    <div class="row">
+      <div class="col-md-12">
+        <table id="summary-table" class="table table-striped table-inverse">
+          <thead>
+            <tr>
+              <th>Pregnancies</th>
+              <th>Glucose</th>
+              <th>BloodPressure</th>
+              <th>SkinThickness</th>
+              <th>Insulin</th>
+              <th>BMI</th>
+              <th>DiabetesPedigreeFunction</th>
+              <th>Age</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
+  </div>
+
+  <script src="../static/scripts/plots.js"></script>
 
 {% endblock %}
+
+

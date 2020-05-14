@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <section class="row">
+      <div class="col-md-8">
+        <article class="description-content">
+          <h1 class="description-header"><strong>The Logistic Regression Classification Model</strong></h1>
+          <hr class="description-hr"/>
+          <img src="../static/images/LR_CM.png" alt="Logistic Regression Confusion Matrix" class="img-responsive" style = "width:100px float: left"/>
+          <p class = "description-content">Although the classification model with the highest weighted average F1-Score was tied between the Gradient Boosting Classification model
+             and the Logistic Regression model, the model chosen for this machine learning tool was the latter. Although this model had the same F1-Score of 0.77 and precision ratio of 0.61 
+             as the Gradient Boosting Classification model,  the accuracy and precision are just slightly better. 
+            <br>
+            <br>
+            Based on this confusion matrix comparing the predicted and actual values of the Decision Tree Classification machine learning model, 
+            it is apparent that the model created is relatively accurate; when you take all true postive and true negative predictions and divide them by the total observations, 
+            you get about 0.78, which is the highest out of all four models created and tested. 
+            <br>
+            <br>
+            The high precision rate leads to a similar conclusion; about 70% of positive predictions ended up being correct,proving that it does have a good level of precision. 
+            <br>
+            <br>
+            <img src="../static/images/LR_CM_Details.png" alt="Logistic Regression Confusion Matrix Details" class="img-responsive" style = "width: 100% vertical-align: center"/>
+            <br>
+            <br>
+            Following that, this model has a recall ratio of 0.61, which, because it is above 50%, isn't too bad. This shows that 
+            the model has a 61% chance of correctly predicting positive observations compared to the total number of actual positive observations. 
+            <br>
+            <br>
+             Lastly, when you look at the F1-Score, which is the weighted average of the precision and recall of the model, it is evident that the previous 
+             observations are further confirmed. With a weighted average F1-score of 0.77, it is safe to say that this model could be reliable for predicting diabetes, 
+             but is not as reliable as the Gradient Booster Classification method.
+            </p>
+        </article>
+      </div>
+      <div class="col-md-4">
+
+        <!-- Start of Visualizations imageNav Area -->
+        <section id="imageNav-area">
+          <div class="imageNav-content">
+            <h2 class="imageNav-header" style ="text-align: center"><strong>ML Models Tested</strong></h2>
+            <hr />
+            <div id="images" style="text-align: center">
+              <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsLR') }}"><strong>Logistic Regression Model</strong></a></h4><br><a href="{{ url_for('methodsLR') }}"><img src="../static/images/LR_CM.png" alt="Logistic Regression Model" class="imageNav-photo active"></a>
+            </div>
+          </div>
+        </section>
+        <!-- End of the Visualizations imageNav Area -->
+
+      </div>
+    </section>
+  </div>
+
+{% endblock %}

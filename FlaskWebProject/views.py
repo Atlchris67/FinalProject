@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template
 from FlaskWebProject import app
 from flask import request
-from FlaskWebProject.pgsql import ValuePredictor, getDBData
+from FlaskWebProject.pgsql import ValuePredictor
 
 @app.route('/')
 @app.route('/home')
@@ -14,7 +14,41 @@ def home():
     """Renders the home page."""
     return render_template(
         'index.html',
-        title='Home Page',
+        year=datetime.now().year,
+    )
+
+@app.route('/methodsDT')
+def methodsDT():
+    """Renders the about page."""
+    return render_template(
+        'methodsDT.html',
+        title='Machine Learning Methods Used',
+        year=datetime.now().year,
+    )
+
+@app.route('/methodsGB')
+def methodsGB():
+    """Renders the about page."""
+    return render_template(
+        'methodsGB.html',
+        title='Machine Learning Methods Used',
+        year=datetime.now().year,
+    )
+
+@app.route('/methodsKN')
+def methodsKN():
+    """Renders the about page."""
+    return render_template(
+        'methodsKN.html',
+        title='Machine Learning Methods Used',
+        year=datetime.now().year,
+    )
+
+@app.route('/methodsLR')
+def methodsLR():
+    """Renders the about page."""
+    return render_template(
+        'methodsLR.html',
         year=datetime.now().year,
     )
 
@@ -25,31 +59,7 @@ def contact():
     """Renders the contact page."""
     return render_template(
         'contact.html',
-        title='Contact',
         year=datetime.now().year,
-        message='Your contact page.'
-    )
-
-@app.route('/plot')
-def plot():
-    a = 1
-    a += 1
-    """Renders the contact page."""
-    return render_template(
-        'plot.html',
-        title='Financial Report',
-        year=datetime.now().year,
-        message='Your Financial report page.'
-    )
-
-@app.route('/about')
-def about():
-    """Renders the about page."""
-    return render_template(
-        'about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Your application description page.'
     )
 
 @app.route('/predict')
@@ -63,6 +73,7 @@ def predict():
         year=datetime.now().year,
         message='Are you at risk?'
     )
+
     
 @app.route('/results', methods = ['POST']) 
 def results(): 

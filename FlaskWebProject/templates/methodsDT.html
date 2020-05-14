@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <section class="row">
+      <div class="col-md-8">
+        <article class="description-content">
+          <h1 class="description-header"><strong>The Decision Tree Classification Model</strong></h1>
+          <hr class="description-hr"/>
+            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner center">
+                <div class="item active">
+                  <img class="center" src="../static/images/DT_CM.png" alt="First slide">
+                </div>
+                <div class="item center">
+                  <img src="../static/images/DT_CM_Details.png" alt="Second slide">
+                </div>
+              </div>
+              <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color:grey">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next" style="color:grey">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div> -->
+          <img src="../static/images/DT_CM.png" alt="Decision Tree Confusion Matrix" class="img-responsive" style = "width:100px float: left"/>
+          <p class = "description-content">>Based on this confusion matrix comparing the predicted and actual values of the Decision Tree Classification machine learning model, 
+            it is apparent that the model created is relatively accurate; when you take all true postive and true negative predictions and divide them by the total observations, 
+            you get about 0.73, which is pretty high. 
+            <br>
+            <br>
+            The slightly high precision rate leads to a similar conclusion; about 61% of positive predictions ended up being correct, which doesn't make the strongest 
+             case for this model, but the fact that amount is above 50% proves that it does have some level of precision.
+            <br>
+            <br>
+            <img src="../static/images/DT_CM_Details.png" alt="Decision Tree Confusion Matrix Details" class="img-responsive" style = "width: 100% vertical-align: center"/>
+            <br>
+            <br>
+            Following that, this model has a recall ratio of 0.60, which again, because it is above 50%, isn't too bad. This shows that 
+            the model has a 60% chance of correctly predicting positive observations compared to the total number of actual positive observations. 
+            <br>
+            <br>
+             Lastly, when you look at the F1-Score, which is the weighted average of the precision and recall of the model, it is evident that the previous 
+             observations are further confirmed. With a weighted average F1-score of 0.73, it is safe to say that this model could be reliable for predicting diabetes, 
+             but is not as reliable as the Gradient Booster Classification method.
+            </p>
+        </article>
+      </div>
+      <div class="col-md-4">
+
+        <!-- Start of Visualizations imageNav Area -->
+        <section id="imageNav-area">
+          <div class="imageNav-content">
+            <h2 class="imageNav-header" style ="text-align: center"><strong>ML Models Tested</strong></h2>
+            <hr />
+            <div id="images" style="text-align: center">
+              <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo active" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsLR') }}"><strong>Logistic Regression Model</strong></a></h4><br><a href="{{ url_for('methodsLR') }}"><img src="../static/images/LR_CM.png" alt="Logistic Regression Model" class="imageNav-photo"></a>
+            </div>
+          </div>
+        </section>
+        <!-- End of the Visualizations imageNav Area -->
+
+      </div>
+    </section>
+  </div>
+
+{% endblock %}
