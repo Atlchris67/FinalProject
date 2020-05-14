@@ -22,7 +22,6 @@ def methodsDT():
     """Renders the about page."""
     return render_template(
         'methodsDT.html',
-        title='Machine Learning Methods Used',
         year=datetime.now().year,
     )
 
@@ -31,7 +30,6 @@ def methodsGB():
     """Renders the about page."""
     return render_template(
         'methodsGB.html',
-        title='Machine Learning Methods Used',
         year=datetime.now().year,
     )
 
@@ -40,7 +38,6 @@ def methodsKN():
     """Renders the about page."""
     return render_template(
         'methodsKN.html',
-        title='Machine Learning Methods Used',
         year=datetime.now().year,
     )
 
@@ -51,6 +48,15 @@ def methodsLR():
         'methodsLR.html',
         year=datetime.now().year,
     )
+
+@app.route('/othermethods')
+def othermethods():
+    """Renders the about page."""
+    return render_template(
+        'methodsDT.html',
+        year=datetime.now().year,
+    )
+
 
 @app.route('/contact')
 def contact():

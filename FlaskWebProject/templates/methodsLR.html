@@ -4,7 +4,7 @@
 
 <div class="container">
     <section class="row">
-      <div class="col-md-8">
+      <div class="column">
         <article class="description-content">
           <h1 class="description-header" style = "color: whitesmoke"><strong>The Logistic Regression Classification Model</strong></h1>
           <hr class="description-hr"/>
@@ -36,22 +36,6 @@
             </p>
         </article>
       </div>
-      <div class="col-md-4">
-
-        <!-- Start of Visualizations imageNav Area -->
-        <section id="imageNav-area">
-          <div class="imageNav-content">
-            <h2 class="imageNav-header" style ="text-align: center; color: whitesmoke"><strong>ML Models Tested</strong></h2>
-            <hr />
-            <div id="images" style="text-align: center">
-              <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/data/ML Plots/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsLR') }}"><strong>Logistic Regression Model</strong></a></h4><br><a href="{{ url_for('methodsLR') }}"><img src="../static/data/ML Plots/images/LR_CM.png" alt="Logistic Regression Model" class="imageNav-photo active"></a>
-            </div>
-          </div>
-        </section>
-        <!-- End of the Visualizations imageNav Area -->
 
       </div>
     </section>
