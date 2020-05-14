@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template
 from FlaskWebProject import app
 from flask import request
-from FlaskWebProject.pgsql import ValuePredictor
+from FlaskWebProject.pgsql import ValuePredictor, getDBData
 
 @app.route('/')
 @app.route('/home')
