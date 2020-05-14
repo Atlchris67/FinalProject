@@ -46,12 +46,9 @@
     </div> <!--end of row-->
 
     <!--tableau visuals-->
-    <div onload="createViz(0);" class="row">
-        <div id="vizContainer" style="width:800px; height:700px;"></div>
-        <div id="controls" style="padding:20px;">
-            <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
-            <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
-        </div>
+    <div class="row">
+      <iframe width="700px" height="auto" src="https://public.tableau.com/shared/TWH8PQWRN?:display_count=y&:origin=viz_share_link">
+      </iframe>
     </div>
 
     <!-- table with data; need to fix/populate table using plots.js file -->
@@ -77,8 +74,6 @@
     </div>
   </div>
 
-  <script src="../static/scripts/plots.js"></script>
 
 {% endblock %}
-
 
