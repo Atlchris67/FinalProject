@@ -193,7 +193,6 @@ input[type="checkbox"].input-validation-error {
   /* ----IMAGE NAV END---- */
 
   /* --PREDICT PAGE --*//
-  .control-label {
+  .form-group {
     color: whitesmoke;
   }
-  
