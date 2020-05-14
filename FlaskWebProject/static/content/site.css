@@ -22,7 +22,7 @@ html, body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    color: white;
+    color: black;
 }
 
 @media only screen and (max-width: 767px) {
@@ -73,6 +73,7 @@ input[type="checkbox"].input-validation-error {
     text-align: center;
     font-size: 32px;
     font-weight: bold;
+    color: black;
   }
   
   .description-content {
@@ -83,7 +84,7 @@ input[type="checkbox"].input-validation-error {
     margin-top: 32px;
   
     /* Visual */
-    background-color: #fff;
+    background-color: black;
   }
   
   .description-content > p {
@@ -139,7 +140,7 @@ input[type="checkbox"].input-validation-error {
     margin-top: 32px;
   
     /* Visual */
-    background-color: #fff;
+    background-color: black;
   }
   
   .imageNav-header {
@@ -148,19 +149,19 @@ input[type="checkbox"].input-validation-error {
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    color: white;
+    color: black;
   }
   
   .imageNav-photo {
-    width: 20px;
+    width: 100px;
   
     /* Box-model */
-    height: 20px;
+    height: 100px;
   }
   
   .imageNav-photod {
-    height: 20%;
-    width: 20%;
+    height: 35%;
+    width: 35%;
   }
   
   .imageNav-photo:hover {
