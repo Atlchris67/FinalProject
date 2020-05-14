@@ -26,7 +26,7 @@
               <br>
               The purpose of this project was to create a machine learning tool that will predict whether someone has diabetes or not, depending on the 
               factors mentioned above. Our team tested out the accuracy of four different Machine Learning Classification Models (Decision Tree, Gradient 
-              Boosting, KNeighbor, and Logistic Regression), decided that the Logistic Regression model was the most accurate when looking at the F1-Score, 
+              Boosting, KNeighbor, and Logistic Regression) and decided that the Logistic Regression model was the most accurate when looking at the F1-Score, 
               precision, accuracy, and recall.</p>
         </div>
       </div> <!--end of first col-->
@@ -46,7 +46,7 @@
     </div> <!--end of row-->
 
     <!--tableau visuals-->
-    <div class="row">
+    <div onload="createViz(0);" class="row">
         <div id="vizContainer" style="width:800px; height:700px;"></div>
         <div id="controls" style="padding:20px;">
             <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>

@@ -6,7 +6,7 @@
     <section class="row">
       <div class="col-md-8">
         <article class="description-content">
-          <h1 class="description-header" style = "color: #1C2833"><strong>The Gradient Boosting Classification Model</strong></h1>
+          <h1 class="description-header" style = "color: whitesmoke"><strong>The Gradient Boosting Classification Model</strong></h1>
           <hr class="description-hr"/>
           <img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Booster Confusion Matrix" class="img-responsive" style = "float: left; padding-right: 20px; padding-bottom: 20px"/>
           <p class = "description-content">Based on this confusion matrix comparing the predicted and actual values of the Gradient Booster Classification machine learning model, 
@@ -14,15 +14,16 @@
             you get about 0.77, which is pretty high. 
             <br>
             <br>
-            The slightly high precision rate leads to a similar conclusion; about 69% of positive predictions ended up being correct, which doesn't make the strongest 
-             case for this model, but the fact that amount is above 50% proves that it does have some level of precision. 
+            The fairly high weighted average precision rate leads to a similar conclusion; about 77% of predictions ended up being correct, 
+            which makes a pretty strong case for this model's precision. 
             <br>
             <br>
              <img src="../static/data/ML Plots/images/GB_CM_Details.png" alt="Gradient Booster Confusion Matrix Details" class="img-responsive" style = "width: 100% vertical-align: center"/>
             <br>
             <br>
-            Following that, this model has a recall ratio of 0.61, which again, because it is above 50%, isn't too bad. This shows that 
-            the model has a 61% chance of correctly predicting positive observations compared to the total number of actual positive observations. 
+            Furthermore, this model has a weighted average recall ratio of 0.77. This shows that 
+            the model has a 77% chance of correctly predicting positive or negative observations compared to the total number 
+            of actual positive or negative observations. 
             <br>
             <br>
              Lastly, when you look at the F1-Score, which is the weighted average of the precision and recall of the model, it is evident that the previous 
@@ -36,7 +37,7 @@
         <!-- Start of Visualizations imageNav Area -->
         <section id="imageNav-area">
           <div class="imageNav-content">
-            <h2 class="imageNav-header" style ="text-align: center; color: #1C2833"><strong>ML Models Tested</strong></h2>
+            <h2 class="imageNav-header" style ="text-align: center; color: whitesmoke"><strong>ML Models Tested</strong></h2>
             <hr />
             <div id="images" style="text-align: center">
               <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/data/ML Plots/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
