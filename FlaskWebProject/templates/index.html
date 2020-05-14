@@ -3,81 +3,104 @@
 {% block content %}
 
 <div class="container">
-    <div class="jumbotron" style = "color: #1C2833">
-      <h1 style="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">
-        Diabetes Machine Learning Predictor
-      </h1>
-      <p></p>
-    </div>
+  <div class="jumbotron" style="color: #1C2833">
+    <h1 style="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif">
+      Diabetes Machine Learning Predictor
+    </h1>
+    <p></p>
+  </div>
 
-    <div class="row">
-      <div class="col-md-4">
-        <div class="panel panel-primary">
-          <div class="panel-body" style="color: #1C2833">
-            <h2><strong>Project Summary</strong></h2>
-          </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-body" style="color: #1C2833">
+          <h2><strong>Project Summary</strong></h2>
         </div>
-        <div class="company">
-            <p style="color: whitesmoke">Our project is based on data from the National Institute of Diabetes and Digestive and Kidney Diseases regarding potential predicting 
-              factors of diabetes among females at least 21 years old of Pima Indian heritage. The size of the dataset is just over 700, and records 
-              factors such as number of pregnancies, glucose, blood pressure, skin thickness, insulin, BMI, Diabetes Pedigree Function, and age among
-              participants. 
-              <br>
-              <br>
-              The purpose of this project was to create a machine learning tool that will predict whether someone has diabetes or not, depending on the 
-              factors mentioned above. Our team tested out the accuracy of four different Machine Learning Classification Models (Decision Tree, Gradient 
-              Boosting, KNeighbor, and Logistic Regression) and decided that the Logistic Regression model was the most accurate when looking at the F1-Score, 
-              precision, accuracy, and recall.</p>
-        </div>
-      </div> <!--end of first col-->
-      <div class="col-md-8">
-        <div class="panel panel-default">
-          <div class="panel-body" style = "color: #1C2833">
-            <p><strong>What are we working with?</strong></p>
-          </div>
-          <img src="../static/data/Diabetes Plots/heatmap3.png" alt="Correlation Matrix" class="img-responsive" style = "width: 100%; height: 300px"/>
-          <p style="padding-top:15px; padding-left: 10px; color: #1C2833">Looking at this correlation matrix heat map of the data selected, it is clear that the variable with the greatest correlation to diabetes is, 
-            unsurprisingly, glucose levels, with a 47% correlation. Following that, it doesn't appear that any of the other variables are significant
-            enough on their own to affect someone's likelihood of having diabetes, but BMI, with a 29% correlation, Age, with a 24% correlation, and 
-            number of pregnancies, with a 22% correlation.
-          </p>
-        </div>
-      </div> <!--end of second column-->
-    </div> <!--end of row-->
-
-    <!--tableau visuals-->
-    <div class="row">
-      <iframe width="700px" height="auto" src="https://public.tableau.com/views/Project_Work_15893955557830/Age-WiselevelsDash?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&publish=yes&:loadOrderID=0#1">
-      </iframe>
-    </div>
-
-    <!-- table with data; need to fix/populate table using plots.js file -->
-    <div class="row">
-      <div class="col-md-12">
-        <table id="summary-table" class="table table-striped table-inverse" style="color: whitesmoke">
-          <thead>
-            <tr>
-              <th>Pregnancies</th>
-              <th>Glucose</th>
-              <th>BloodPressure</th>
-              <th>SkinThickness</th>
-              <th>Insulin</th>
-              <th>BMI</th>
-              <th>DiabetesPedigreeFunction</th>
-              <th>Age</th>
-              <th>Outcome</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+      </div>
+      <div class="company">
+        <p style="color: whitesmoke">Our project is based on data from the National Institute of Diabetes and Digestive
+          and Kidney Diseases regarding potential predicting
+          factors of diabetes among females at least 21 years old of Pima Indian heritage. The size of the dataset is
+          just over 700, and records
+          factors such as number of pregnancies, glucose, blood pressure, skin thickness, insulin, BMI, Diabetes
+          Pedigree Function, and age among
+          participants.
+          <br>
+          <br>
+          The purpose of this project was to create a machine learning tool that will predict whether someone has
+          diabetes or not, depending on the
+          factors mentioned above. Our team tested out the accuracy of four different Machine Learning Classification
+          Models (Decision Tree, Gradient
+          Boosting, KNeighbor, and Logistic Regression) and decided that the Logistic Regression model was the most
+          accurate when looking at the F1-Score,
+          precision, accuracy, and recall.</p>
       </div>
     </div>
+    <!--end of first col-->
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-body" style="color: #1C2833">
+          <p><strong>What are we working with?</strong></p>
+        </div>
+        <img src="../static/data/Diabetes Plots/heatmap3.png" alt="Correlation Matrix" class="img-responsive"
+          style="width: 100%; height: 300px" />
+        <p style="padding-top:15px; padding-left: 10px; color: #1C2833">Looking at this correlation matrix heat map of
+          the data selected, it is clear that the variable with the greatest correlation to diabetes is,
+          unsurprisingly, glucose levels, with a 47% correlation. Following that, it doesn't appear that any of the
+          other variables are significant
+          enough on their own to affect someone's likelihood of having diabetes, but BMI, with a 29% correlation, Age,
+          with a 24% correlation, and
+          number of pregnancies, with a 22% correlation.
+        </p>
+      </div>
+    </div>
+    <!--end of second column-->
   </div>
+  <!--end of row-->
+
+  <!--tableau visuals-->
+  <div class="row">
+    <div class='tableauPlaceholder' id='viz1589496707956' style='position: relative'><noscript><a href='#'><img
+            alt='Age-Wise levels Dash  '
+            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BX&#47;BXKPBH3CN&#47;1_rss.png'
+            style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='path' value='shared&#47;BXKPBH3CN' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image'
+          value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;BX&#47;BXKPBH3CN&#47;1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' /></object></div>
+    <script
+      type='text/javascript'>                    var divElement = document.getElementById('viz1589496707956'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '520px'; vizElement.style.maxWidth = '1150px'; vizElement.style.width = '100%'; vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '520px'; vizElement.style.maxWidth = '1150px'; vizElement.style.width = '100%'; vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1977px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+  </div>
+
+  <!-- table with data; need to fix/populate table using plots.js file -->
+  <div class="row">
+    <div class="col-md-12">
+      <table id="summary-table" class="table table-striped table-inverse" style="color: whitesmoke">
+        <thead>
+          <tr>
+            <th>Pregnancies</th>
+            <th>Glucose</th>
+            <th>BloodPressure</th>
+            <th>SkinThickness</th>
+            <th>Insulin</th>
+            <th>BMI</th>
+            <th>DiabetesPedigreeFunction</th>
+            <th>Age</th>
+            <th>Outcome</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
-
-{% block scripts %}
-<script src=“/static/scripts/plots.js”></script>
-{% endblock %
-
