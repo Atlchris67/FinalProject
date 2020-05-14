@@ -1,5 +1,6 @@
 var vizList = ["https://public.tableau.com/views/Final_Project_15894299116730/Dashboard1?:display_count=y&:origin=viz_share_link",
-  "https://public.tableau.com/views/Final_Project_15894299116730/Age?:display_count=y&:origin=viz_share_link"];
+  "https://public.tableau.com/views/Final_Project_15894299116730/Age?:display_count=y&:origin=viz_share_link",
+"https://public.tableau.com/views/Final_Project_15894299116730/BP?:display_count=y&:origin=viz_share_link"];
 
 var viz,
   vizLen = vizList.length,
