@@ -69,6 +69,10 @@ input[type="checkbox"].input-validation-error {
 }
 
 /* --- HOME PAGE ---*/
+.tableau {
+  height: 175px;
+  overflow: auto;
+}
 
 .carousel {
   padding-bottom: 20px
