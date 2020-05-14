@@ -14,7 +14,7 @@
       <div class="col-md-4">
         <div class="panel panel-primary">
           <div class="panel-body" style = "color: #1C2833">
-            Project Summary:
+            <h2><strong>Project Summary</strong></h2>
           </div>
         </div>
         <div class="company">
@@ -24,21 +24,30 @@
               participants. 
               <br>
               <br>
-              The purpose of this project is to create a machine learning tool that will predict whether someone has diabetes or not, depending on the 
+              The purpose of this project was to create a machine learning tool that will predict whether someone has diabetes or not, depending on the 
               factors mentioned above. Our team tested out the accuracy of four different Machine Learning Classification Models (Decision Tree, Gradient 
               Boosting, KNeighbor, and Logistic Regression), decided that the Logistic Regression model was the most accurate when looking at the F1-Score, 
               precision, accuracy, and recall.</p>
         </div>
-      </div>
+      </div> <!--end of first col-->
       <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-body" style = "color: #1C2833">
-            Data Visualizations
+            <p><strong>What are we working with?</strong></p>
           </div>
+          <img src="../static/data/Diabetes Plots/heatmap3.png" alt="Correlation Matrix" class="img-responsive" style = "width: 100%; height: 300px"/>
+          <p style="padding-top:15px; padding-left: 10px">Looking at this correlation matrix heat map of the data selected, it is clear that the variable with the greatest correlation to diabetes is, 
+            unsurprisingly, glucose levels, with a 47% correlation. Following that, it doesn't appear that any of the other variables are significant
+            enough on their own to affect someone's likelihood of having diabetes, but BMI, with a 29% correlation, Age, with a 24% correlation, and 
+            number of pregnancies, with a 22% correlation.
+          </p>
         </div>
-        <div id="plot"></div>
-        <!-- carousel with images of plots? How do we want to display data here? -->
-      </div>
+      </div> <!--end of second column-->
+    </div> <!--end of row-->
+
+    <!--tableau visuals-->
+    <div class="row">
+
     </div>
 
     <!-- need to fix/populate table using plots.js file -->

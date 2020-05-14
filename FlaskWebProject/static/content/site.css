@@ -9,6 +9,7 @@ html, body {
     float: left;
     width: 33.33%;
     padding: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   }
   
   /* Clear floats after image containers */
@@ -16,6 +17,7 @@ html, body {
     content: "";
     clear: both;
     display: table;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,6 +25,7 @@ html, body {
     padding-left: 15px;
     padding-right: 15px;
     color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 @media only screen and (max-width: 767px) {
@@ -65,6 +68,11 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+/* --- HOME PAGE ---*/
+
+.carousel {
+  padding-bottom: 20px
+}
 
 /* ----Methods page - DESCRIPTION START---- */
 .description-header {

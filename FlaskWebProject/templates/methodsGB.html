@@ -8,7 +8,7 @@
         <article class="description-content">
           <h1 class="description-header" style = "color: #1C2833"><strong>The Gradient Boosting Classification Model</strong></h1>
           <hr class="description-hr"/>
-          <img src="../static/images/GB_CM.png" alt="Gradient Booster Confusion Matrix" class="img-responsive" style = "width:100px float: left"/>
+          <img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Booster Confusion Matrix" class="img-responsive" style = "float: left; padding-right: 20px; padding-bottom: 20px"/>
           <p class = "description-content">Based on this confusion matrix comparing the predicted and actual values of the Gradient Booster Classification machine learning model, 
             it is apparent that the model created is relatively accurate; when you take all true postive and true negative predictions and divide them by the total observations, 
             you get about 0.77, which is pretty high. 
@@ -18,7 +18,7 @@
              case for this model, but the fact that amount is above 50% proves that it does have some level of precision. 
             <br>
             <br>
-             <img src="../static/images/GB_CM_Details.png" alt="Gradient Booster Confusion Matrix Details" class="img-responsive" style = "width: 100% vertical-align: center"/>
+             <img src="../static/data/ML Plots/images/GB_CM_Details.png" alt="Gradient Booster Confusion Matrix Details" class="img-responsive" style = "width: 100% vertical-align: center"/>
             <br>
             <br>
             Following that, this model has a recall ratio of 0.61, which again, because it is above 50%, isn't too bad. This shows that 
@@ -39,10 +39,10 @@
             <h2 class="imageNav-header" style ="text-align: center; color: #1C2833"><strong>ML Models Tested</strong></h2>
             <hr />
             <div id="images" style="text-align: center">
-              <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo active" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsLR') }}"><strong>Logistic Regression Model</strong></a></h4><br><a href="{{ url_for('methodsLR') }}"><img src="../static/images/LR_CM.png" alt="Logistic Regression Model" class="imageNav-photo"></a>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/data/ML Plots/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo active" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsLR') }}"><strong>Logistic Regression Model</strong></a></h4><br><a href="{{ url_for('methodsLR') }}"><img src="../static/data/ML Plots/images/LR_CM.png" alt="Logistic Regression Model" class="imageNav-photo"></a>
             </div>
           </div>
         </section>
