@@ -6,7 +6,7 @@ from datetime import datetime
 from flask import render_template
 from FlaskWebProject import app
 from flask import request
-from FlaskWebProject.pgsql import ValuePredictor
+from FlaskWebProject.pgsql import ValuePredictor, getDBData
 
 @app.route('/')
 @app.route('/home')
@@ -63,7 +63,6 @@ def predict():
         year=datetime.now().year,
         message='Are you at risk?'
     )
-
     
 @app.route('/results', methods = ['POST']) 
 def results(): 
@@ -85,3 +84,11 @@ def results():
             message='Are you at risk?',
              prediction = prediction
              ) 
+
+@app.route('/dataset')
+def dataset(value=None):
+    """Renders the dataset page."""
+    data = getDBData()
+    return render_template("dataset.html",
+        value=data
+    )
