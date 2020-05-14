@@ -153,10 +153,10 @@ input[type="checkbox"].input-validation-error {
   }
   
   .imageNav-photo {
-    width: 100px;
+    width: 140px;
   
     /* Box-model */
-    height: 100px;
+    height: 140px;
   }
   
   .imageNav-photod {
