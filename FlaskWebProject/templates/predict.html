@@ -9,52 +9,52 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="pregnancies" style="color: whitesmoke">Pregnancies:</label>
         <div class="col-sm-10">
-            <input class="form-control"  step="1" id="pregnancies" name="pregnancies"  type="number" required min="0" max="20">
+            <input class="form-control"  step="1" id="pregnancies" name="pregnancies"  type="number" required min="0" max="20" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Max of 20">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="glucose" style="color: whitesmoke">Glucose (mg/dL):</label>
         <div class="col-sm-10">
-            <input class="form-control"  id="glucose" name="glucose" required type="number" step="0.01">
+            <input class="form-control"  id="glucose" name="glucose" required type="number" step="0.01" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Normal Below 140">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="blood_pressure" style="color: whitesmoke">Blood Pressure (mm Hg):</label>
         <div class="col-sm-10">
             <input class="form-control"  id="blood_pressure" name="blood_pressure" required type="number"
-                step="1">
+                step="1"  data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Normal 80-89">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="skin_thickness" style="color: whitesmoke">Skin Thickness (μm):</label>
         <div class="col-sm-10">
             <input class="form-control"  id="skin_thickness" name="skin_thickness" required type="number"
-                step="0.01">
+                step="0.01" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Normal 23mm">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="pregnancies" style="color: whitesmoke">Insulin (mIU/L):</label>
         <div class="col-sm-10">
-            <input class="form-control"  id="insulin" name="insulin" required type="number" step="0.01">
+            <input class="form-control"  id="insulin" name="insulin" required type="number" step="0.01" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Normal 16-166">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="bmi" style="color: whitesmoke">BMI (kg/m2): </label>
         <div class="col-sm-10">
-            <input class="form-control" id="bmi" name="bmi" required type="number"  step="0.01">
-        </div>
+            <input class="form-control" id="bmi" name="bmi" required type="number"  step="0.01" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Body Mass Index. Ranges from 18 (underweight) to 60+ (morbidly obese). ">
+        </div> 
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="diabetes_pedigree_function" style="color: whitesmoke">Diabetes Pedigree Function (put 0 if n/a):</label>
         <div class="col-sm-10">
             <input class="form-control" id="diabetes_pedigree_function" name="diabetes_pedigree_function"
-                required type="number" step="0.01">
+                required type="number" step="0.01" data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Likelihood of diabetes based on family history. Ranges from 0 (no family history) to 2.7 (strong family history)">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="age" style="color: whitesmoke">Age:</label>
         <div class="col-sm-10">
-            <input class="form-control"  id="age" name="age" required type="number" step="1"  min="0" max="120">
+            <input class="form-control"  id="age" name="age" required type="number" step="1"  min="21" max="120"  data-trigger="hover focus"   data-toggle="popover" data-placement="right" data-content="Age 21+">>
         </div>
     </div>
 
@@ -65,6 +65,8 @@
     </div>
 </form>
 
+{% endblock %}
 
-
+{% block scripts %}
+<script src="../static/scripts/predict.js"></script>
 {% endblock %}

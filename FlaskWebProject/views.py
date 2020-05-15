@@ -70,8 +70,6 @@ def contact():
 
 @app.route('/predict')
 def predict():
-    a = 1
-    a += 1
     """Renders the prediction page."""
     return render_template(
         'predict.html',
@@ -83,8 +81,6 @@ def predict():
     
 @app.route('/results', methods = ['POST']) 
 def results(): 
-    a = 1
-    a += 1
     """Renders the result  page."""
      
     to_predict_list = request.form.to_dict() 
