@@ -88,9 +88,9 @@ def results():
     to_predict_list = list(map(float, to_predict_list)) 
     result = ValuePredictor(to_predict_list)         
     if int(result)== 1: 
-        prediction ='Run Martha your gonna get the sugar.'
+        prediction ='Run Martha, or you\'re gonna get the sugar.'
     else: 
-        prediction ='Go ahead and have another donut Martha, your all good.'            
+        prediction ='Go ahead and have another donut Martha, you\'re all good.'            
     return render_template("results.html",
             title='Diabetes Prediction Form',
             year=datetime.now().year,
