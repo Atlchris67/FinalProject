@@ -80,6 +80,13 @@ input[type="checkbox"].input-validation-error {
   table-layout: fixed;
 }
 
+.row2 {
+  margin: 20px;
+  overflow-y: auto;
+  height: 300px;
+  table-layout: fixed;
+}
+
 /* ----Methods page - DESCRIPTION START---- */
 .description-header {
     margin-bottom: 33px;
