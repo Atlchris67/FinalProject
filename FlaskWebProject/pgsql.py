@@ -104,7 +104,7 @@ def predictDiabetes(pregnancies, glucose, blood_pressure, skin_thickness, insuli
         print(diabetes_results_df.head())
 
         # Save
-        # savePredictedResults(diabetes_results_df)
+        savePredictedResults(diabetes_results_df)
 
 
 
