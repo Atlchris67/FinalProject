@@ -69,14 +69,15 @@ input[type="checkbox"].input-validation-error {
 }
 
 /* --- HOME PAGE ---*/
-.tableau {
-  width: 100%;
-  height: 175px;
-  overflow: auto;
-}
-
 .carousel {
   padding-bottom: 20px
+}
+
+#summary-table {
+  margin: 20px;
+  overflow-y: auto;
+  height: 300px;
+  table-layout: fixed;
 }
 
 /* ----Methods page - DESCRIPTION START---- */
