@@ -9,7 +9,7 @@
           <h1 class="description-header" style = "color: whitesmoke"><strong>The Gradient Boosting Classification Model</strong></h1>
           <hr class="description-hr"/>
           <img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Booster Confusion Matrix" class="img-responsive" style = "float: left; padding-right: 20px; padding-bottom: 20px"/>
-          <p class = "description-content">Based on this confusion matrix comparing the predicted and actual values of the Gradient Booster Classification machine learning model, 
+          <p class = "description-content">Based on this confusion matrix comparing the predicted and actual values of the Gradient Boosting Classification machine learning model, 
             it is apparent that the model created is relatively accurate; when you take all true postive and true negative predictions and divide them by the total observations, 
             you get about 0.77, which is pretty high. 
             <br>
@@ -26,9 +26,9 @@
             of actual positive or negative observations. 
             <br>
             <br>
-             Lastly, when you look at the F1-Score, which is the weighted average of the precision and recall of the model, it is evident that the previous 
-             observations are further confirmed. With a weighted average F1-score of 0.77, it is safe to say that this model could be reliable for predicting diabetes than the 
-             Decision Tree Model.
+             Lastly, when you look at the F1-Score, which is the harmonic average of the precision and recall of the model, it is evident that the previous 
+             observations are further confirmed. With a weighted average F1-score of 0.77, it is safe to say that this model could be more reliable for predicting diabetes than the 
+             Decision Tree or KNN Models, but is fairly comparable to the Logistic Regression Classification model in that respect.
             </p>
         </article>
       </div>
@@ -42,7 +42,7 @@
             <div id="images" style="text-align: center">
               <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/data/ML Plots/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
               <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo active" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>K-Nearest Neighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
             </div>
           </div>
         </section>

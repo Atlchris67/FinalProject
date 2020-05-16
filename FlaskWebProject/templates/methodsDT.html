@@ -25,9 +25,9 @@
             the model has a 73% chance of correctly predicting positive observations compared to the total number of actual positive observations. 
             <br>
             <br>
-             Lastly, when you look at the F1-Score, which is the weighted average of the precision and recall of the model, it is evident that the previous 
+             Lastly, when you look at the F1-Score, which is the harmonic average of the precision and recall of the model, it is evident that the previous 
              observations are further confirmed. With a weighted average F1-score of 0.73, it is safe to say that this model could be reliable for predicting diabetes, 
-             but is not as reliable as the Gradient Booster Classification method.
+             but is not as reliable as the Gradient Boosting or Logistic Regression Classification models.
             </p>
         </article>
       </div>
@@ -41,7 +41,7 @@
             <div id="images" style="text-align: center">
               <h4 style="text-align: center"><a href="{{ url_for('methodsDT') }}"><strong>Decision Tree Model</strong></a></h4><br><a href="{{ url_for('methodsDT') }}"><img src="../static/data/ML Plots/images/DT_CM.png" alt="Decision Tree  Model" class="imageNav-photo active" style = "padding-bottom: 15px"></a><br>
               <h4 style="text-align: center"><a href="{{ url_for('methodsGB') }}"><strong>Gradient Boosting Model</strong></a></h4><br><a href="{{ url_for('methodsGB') }}"><img src="../static/data/ML Plots/images/GB_CM.png" alt="Gradient Boosting Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
-              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>KNeighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
+              <h4 style="text-align: center"><a href="{{ url_for('methodsKN') }}"><strong>K-Nearest Neighbor Model</strong></a></h4><br><a href="{{ url_for('methodsKN') }}"><img src="../static/data/ML Plots/images/KN_CM.png" alt="KNeighbor Model" class="imageNav-photo" style = "padding-bottom: 15px"></a><br>
             </div>
           </div>
         </section>
