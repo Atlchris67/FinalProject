@@ -73,9 +73,7 @@ def predict():
     """Renders the prediction page."""
     return render_template(
         'predict.html',
-        title='Diabetes Prediction Form',
         year=datetime.now().year,
-        message='Are you at risk?'
     )
 
     
@@ -92,9 +90,7 @@ def results():
     else: 
         prediction ='Go ahead and have another donut Martha, you\'re all good.'            
     return render_template("results.html",
-            title='Diabetes Prediction Form',
             year=datetime.now().year,
-            message='Are you at risk?',
              prediction = prediction
              ) 
 
