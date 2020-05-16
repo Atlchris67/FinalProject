@@ -120,7 +120,7 @@ if error_flag == True:
 
 
 
-# Model 3. K Neighbors Classifier
+# Model 3. Decision Tree Classifier
 print("*** Run Decision Tree Classifier ***")
 error_flag = runDecisionTreeClassifier(X_train, X_test, y_train, y_test)
 # Exit if error 
