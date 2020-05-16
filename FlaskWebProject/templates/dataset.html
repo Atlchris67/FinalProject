@@ -1,7 +1,14 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/data/ML Plots/images/tab-pic.png">
+    <title>{{ title }} - Diabetes ML Flask Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+</head>
+<body style="background-color: black">
+    <h5 style="color: white"> {{ value }} </h5>
+</body>
 
-{% block content %}
-
-    <h5> {{ value }} </h5>
-
-{% endblock %}
